@@ -4,4 +4,4 @@
 
 source /usr/local/cliqr/etc/userenv
 export IPAddr
-ifconfig ens160 $IPAddr netmask 255.255.255.0
+sudo ifconfig ens160 $IPAddr netmask 255.255.255.0
