@@ -9,7 +9,7 @@
 #ifconfig ens160 $IPAddr netmask 255.255.255.0
 
 # Install django
-sudo apt install python-pip
+apt install python-pip
 Y
 Y
 pip3 install Django
