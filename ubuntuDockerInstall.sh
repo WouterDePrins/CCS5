@@ -9,6 +9,11 @@
 #ifconfig ens160 $IPAddr netmask 255.255.255.0
 
 # Install django
-#apt-get install python3 python3-pip
-#pip3 install Django
-#git clone https://github.com/WouterDePrins/EasyRefApp.git
+sudo apt install python-pip
+Y
+Y
+pip3 install Django
+mkdir Coding
+cd Coding
+git clone https://github.com/WouterDePrins/EasyRefApp.git
+
