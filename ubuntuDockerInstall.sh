@@ -11,16 +11,16 @@
 #ifconfig ens160 $IPAddr netmask 255.255.255.0
 
 # Install django
-apt-get update -y
-apt install python-pip -y
-apt-get install git -y
-apt-get install git -y
-pip3 install Django
+sudo apt-get update -y
+sudo apt install python-pip -y
+sudo apt-get install git -y
+sudo apt-get install git -y
+sudo pip3 install Django
 
 cd /home
 mkdir Coding
 cd Coding
 
-git config --global user.email “wouterdeprins@hotmail.com”
-git config --global user.name “WouterDePrins”
-git clone https://github.com/WouterDePrins/EasyRefApp.git
+sudo git config --global user.email “wouterdeprins@hotmail.com”
+sudo git config --global user.name “WouterDePrins”
+sudo git clone https://github.com/WouterDePrins/EasyRefApp.git
