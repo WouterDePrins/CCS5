@@ -11,7 +11,7 @@
 #ifconfig ens160 $IPAddr netmask 255.255.255.0
 
 # Install django
-apt install python-pip -y
+#apt install python-pip -y
 pip3 install Django
 pip3 install git
 mkdir Coding
