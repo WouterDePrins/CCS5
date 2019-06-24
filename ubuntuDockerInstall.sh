@@ -15,5 +15,5 @@
 pip3 install Django
 mkdir Coding
 cd Coding
-git clone https://github.com/WouterDePrins/EasyRefApp.git
+#git clone https://github.com/WouterDePrins/EasyRefApp.git
 
