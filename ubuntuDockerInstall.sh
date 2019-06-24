@@ -13,7 +13,6 @@
 # Install django
 #apt install python-pip -y
 pip3 install Django
-pip3 install git
 mkdir Coding
 cd Coding
 git clone https://github.com/WouterDePrins/EasyRefApp.git
