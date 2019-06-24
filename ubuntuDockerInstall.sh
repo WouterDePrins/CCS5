@@ -16,6 +16,7 @@
 cd /home
 mkdir Coding
 cd Coding
+sudo apt-get install git -y
 git config --global user.email “wouterdeprins@hotmail.com”
 git config --global user.name “WouterDePrins”
 git clone https://github.com/WouterDePrins/EasyRefApp.git
