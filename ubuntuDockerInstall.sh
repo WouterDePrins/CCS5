@@ -12,9 +12,9 @@
 
 # Install django
 #apt install python-pip -y
-pip3 install Django
-cd /home
+# pip3 install Django
+cd /home/cliqruser
 mkdir Coding
 cd Coding
-#git clone https://github.com/WouterDePrins/EasyRefApp.git
+git clone https://github.com/WouterDePrins/EasyRefApp.git
 
