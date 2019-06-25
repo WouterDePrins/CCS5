@@ -1,7 +1,6 @@
 #!/bin/bash
 
-sudo apt install python-pip -y
-sudo apt-get install git -y
+sudo apt-get install python3 python3-pip git -y
 sudo pip3 install Django
 
 cd /home
