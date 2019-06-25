@@ -10,4 +10,4 @@ cd Coding
 
 sudo git config --global user.email "wouterdeprins@hotmail.com"
 sudo git config --global user.name "WouterDePrins"
-sudo git clone https://github.com/WouterDePrins/EasyRefApp.git
+sudo git clone https://github.com/WouterDePrins/CCS_IPAM.git
