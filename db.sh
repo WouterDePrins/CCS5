@@ -1,4 +1,3 @@
-sudo dpkg -i mysql-apt-config_0.8.15-1_all.deb
 sudo apt-get -y update
 sudo apt-get -y install mysql-server
 sudo apt-get -y install git
