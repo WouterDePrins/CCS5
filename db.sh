@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo apt-get -y update
 sudo apt-get -y install mysql-server
 sudo apt-get -y install git
