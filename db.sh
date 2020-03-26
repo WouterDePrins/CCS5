@@ -22,7 +22,7 @@ expect \"Reload privilege tables now?\"
 send \"y\r\"
 expect eof
 ")
-echo "$SECURE_MYSQL"
+sudo echo "$SECURE_MYSQL"
 sudo aptitude -y purge expect
 # populate database
 mkdir -p /home/cliqruser/db
