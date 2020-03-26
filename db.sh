@@ -3,17 +3,35 @@ sudo apt-get -y install mysql-server
 sudo apt-get -y install git
 sudo service mysql start
 
-# get mysql temp pwd
-temp_password=$(sudo grep password /var/log/mysqld.log | awk '{print $NF}')
+aptitude -y install expect
 
-# create & execute query for new user
-sudo echo "SET PASSWORD FOR 'appuser'@'%' = PASSWORD('C1sco123&');" | sudo tee /home/cliqruser/changepass.sql > /dev/null
-sudo echo "GRANT ALL PRIVILEGES ON *.* TO 'appuser'@'%' IDENTIFIED BY 'C1sco123&';" | sudo tee /home/cliqruser/newuser.sql > /dev/null
-mysql -u root --password="$temp_password" --connect-expired-password < /home/cliqruser/newuser.sql
-mysql -u root --password="$temp_password" --connect-expired-password < /home/cliqruser/changepass.sql
+// Not required in actual script
+MYSQL_ROOT_PASSWORD=ciscocisco
+
+SECURE_MYSQL=$(expect -c "
+set timeout 10
+spawn mysql_secure_installation
+expect \"Enter current password for root (enter for none):\"
+send \"$MYSQL\r\"
+expect \"Change the root password?\"
+send \"n\r\"
+expect \"Remove anonymous users?\"
+send \"y\r\"
+expect \"Disallow root login remotely?\"
+send \"y\r\"
+expect \"Remove test database and access to it?\"
+send \"y\r\"
+expect \"Reload privilege tables now?\"
+send \"y\r\"
+expect eof
+")
+
+echo "$SECURE_MYSQL"
+
+aptitude -y purge expect
 
 # populate database
 mkdir -p /home/cliqruser/db
 git clone https://github.com/datacharmer/test_db.git /home/cliqruser/db
 cd /home/cliqruser/db/
-mysql -u root --password="$temp_password" --connect-expired-password < /home/cliqruser/db/employees.sql
+mysql -u root --password="ciscocisco" --connect-expired-password < /home/cliqruser/db/employees.sql
