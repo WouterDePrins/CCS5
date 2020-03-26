@@ -24,7 +24,7 @@ expect eof
 ")
 sudo echo "$SECURE_MYSQL"
 sudo aptitude -y purge expect
-sudo mkdir database
-git clone https://github.com/datacharmer/test_db.git database
-cd database/
-sudo mysql -u root --password="ciscocisco" --connect-expired-password < database/employees.sql
+sudo mkdir /home/cliqruser/db
+git clone https://github.com/datacharmer/test_db.git /home/cliqruser/db
+cd /home/cliqruser/db
+sudo mysql -u root --password="ciscocisco" --connect-expired-password < /home/cliqruser/db/employees.sql
