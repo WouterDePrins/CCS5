@@ -25,7 +25,7 @@ expect eof
 sudo echo "$SECURE_MYSQL"
 sudo aptitude -y purge expect
 # populate database
-sudo mkdir -p /home/cliqruser/db
-sudo git clone https://github.com/datacharmer/test_db.git /home/cliqruser/db
+mkdir -p /home/cliqruser/db
+git clone https://github.com/datacharmer/test_db.git /home/cliqruser/db
 cd /home/cliqruser/db/
 sudo mysql -u root --password="ciscocisco" --connect-expired-password < /home/cliqruser/db/employees.sql
