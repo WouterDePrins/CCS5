@@ -3,7 +3,6 @@ sudo apt-get -y update
 sudo apt-get -y install aptitude
 sudo apt-get -y install mysql-server
 sudo apt-get -y install git
-sudo service mysql start
 sudo aptitude -y install expect
 MYSQL_ROOT_PASSWORD=ciscocisco
 SECURE_MYSQL=$(expect -c "
