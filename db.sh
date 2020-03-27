@@ -11,4 +11,4 @@ sudo mysql -u root -psomething -e "CREATE USER 'ubuntu'@'localhost' IDENTIFIED B
 cd /home/cliqruser/
 sudo git clone https://github.com/datacharmer/test_db.git
 cd /home/cliqruser/test_db/
-sudo mysql -u ubuntu -psomething < employees.sql
+sudo mysql -u root -psomething < employees.sql
