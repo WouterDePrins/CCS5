@@ -26,4 +26,6 @@ sudo echo "$SECURE_MYSQL"
 sudo aptitude -y purge expect
 cd /home/cliqruser/
 sudo git clone https://github.com/datacharmer/test_db.git
-sudo mysql -u root --password="ciscocisco" --connect-expired-password < test_db/employees.sql
+sleep 3s
+cd /test_db
+sudo mysql -u root --password="ciscocisco" --connect-expired-password < employees.sql
