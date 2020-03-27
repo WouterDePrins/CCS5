@@ -26,4 +26,6 @@ echo "$SECURE_MYSQL"
 cd /home/cliqruser/
 sudo git clone https://github.com/datacharmer/test_db.git
 cd /home/cliqruser/test_db/
-sudo mysql --user="root" --password="ciscocisco" < employees.sql
+sudo mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ciscocisco';"
+sudo mysql -u root -e "FLUSH PRIVILEGES;"
+sudo mysql -u root --password="ciscocisco" < employees.sql
