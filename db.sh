@@ -1,29 +1,12 @@
 #!/bin/bash
 sudo apt-get -y update
-sudo apt-get -y install aptitude
-sudo apt-get -y install mysql-server
-sudo apt-get -y install git
-sudo aptitude -y install expect
-MYSQL_ROOT_PASSWORD=ciscocisco
-SECURE_MYSQL=$(expect -c "
-set timeout 10
-spawn mysql_secure_installation
-expect \"Enter current password for root (enter for none):\"
-send \"$MYSQL\r\"
-expect \"Change the root password?\"
-send \"n\r\"
-expect \"Remove anonymous users?\"
-send \"y\r\"
-expect \"Disallow root login remotely?\"
-send \"y\r\"
-expect \"Remove test database and access to it?\"
-send \"y\r\"
-expect \"Reload privilege tables now?\"
-send \"y\r\"
-expect eof
-")
-echo "$SECURE_MYSQL"
+sudo apt-get -y install build-essential mysql-server libmysqlclient-dev npm git mysql-server
+sudo mysql -e "SET PASSWORD FOR root@localhost = PASSWORD('something');FLUSH PRIVILEGES;"
+sudo mysql -e "DELETE FROM mysql.user WHERE User='';"
+sudo mysql -e "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');"
+sudo mysql -e "DROP DATABASE test;DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';"
+sudo mysql -u root -psomething -e "CREATE USER 'ubuntu'@'localhost' IDENTIFIED BY 'something';GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'localhost';FLUSH PRIVILEGES;"
 cd /home/cliqruser/
 sudo git clone https://github.com/datacharmer/test_db.git
 cd /home/cliqruser/test_db/
-mysql -u root --password="ciscocisco" < employees.sql
+sudo mysql -u root -psomething < employees.sql
