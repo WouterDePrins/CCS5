@@ -1,7 +1,7 @@
 <?php
 $dbhost = "%DB_TIER_IP%";
-$dbuser = "root";
-$dbpass = "ciscocisco";
+$dbuser = "ubuntu";
+$dbpass = "something";
 $db = "employees";
 $conn = new mysqli($dbhost, $dbuser, $dbpass,$db);
 
