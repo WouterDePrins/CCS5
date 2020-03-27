@@ -2,6 +2,7 @@
 sudo apt-get -y update
 sudo apt-get -y install mysql-server 
 sudo apt-get -y install git
+sudo sed -i "s/.*bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
 sudo mysql -e "SET PASSWORD FOR root@localhost = PASSWORD('something');FLUSH PRIVILEGES;"
 sudo mysql -e "DELETE FROM mysql.user WHERE User='';"
 sudo mysql -e "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');"
