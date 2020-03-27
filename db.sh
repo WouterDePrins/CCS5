@@ -23,3 +23,8 @@ send \"y\r\"
 expect eof
 ")
 echo "$SECURE_MYSQL"
+cd /home/cliqruser/
+sudo git clone https://github.com/datacharmer/test_db.git
+sudo sleep 3s
+cd test_db/
+sudo mysql -u root --password="ciscocisco" --connect-expired-password < employees.sql
