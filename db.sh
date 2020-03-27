@@ -22,5 +22,4 @@ expect \"Reload privilege tables now?\"
 send \"y\r\"
 expect eof
 ")
-sudo echo "$SECURE_MYSQL"
-sudo aptitude -y purge expect
+echo "$SECURE_MYSQL"
