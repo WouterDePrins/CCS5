@@ -9,6 +9,7 @@ sudo mysql -e "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localh
 sudo mysql -e "DROP DATABASE test;DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';"
 sudo mysql -u root -psomething -e "CREATE USER 'ubuntu'@'localhost' IDENTIFIED BY 'something';"
 sudo mysql -u root -psomething -e "GRANT ALL PRIVILEGES ON *.* TO ubuntu@'%' IDENTIFIED BY 'something' WITH GRANT OPTION;"
+sudo service mysql restart
 cd /home/cliqruser/
 sudo git clone https://github.com/datacharmer/test_db.git
 cd /home/cliqruser/test_db/
