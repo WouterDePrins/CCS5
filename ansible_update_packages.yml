@@ -3,6 +3,7 @@
   connection: local
   tasks: 
     - name: Update and upgrade apt packages
+      ignore_errors: yes
       become: true
       apt:
         upgrade: yes
